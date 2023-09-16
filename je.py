@@ -28,7 +28,7 @@ for restaurant in restaurants:
     phone = phone_href.replace('tel:', '').strip()
 
     # 주소 정보를 직접 추출
-    address = restaurant.find('span', class_='shop-info-text').get_text(strip=True, separator='\n')
+    address = restaurant.find('span', class_='shop-info-text').get_text(strip=True,separator='\n')
 
     # 결과를 딕셔너리로 저장
     restaurant_data.append({
@@ -43,3 +43,11 @@ for data in restaurant_data:
     print(f"전화번호: {data['전화번호']}")
     print(f"주소: {data['주소']}")
     print('-' * 50)
+
+# 결과를 텍스트 파일로 저장
+# with open('restaurant_data.txt', 'w', encoding='utf-8') as file:
+#     for data in restaurant_data:
+#         file.write(f"식당: {data['이름']}\n")
+#         file.write(f"전화번호: {data['전화번호']}\n")
+#         file.write(f"주소: {data['주소']}\n")
+#         file.write('-' * 50 + '\n')
